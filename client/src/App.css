@@ -1,0 +1,252 @@
+*{
+    font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	scroll-padding-top: 2rem;
+    color: var(--text-color);
+}
+
+:root{
+    --main-color:#C4FB6D;
+    --dark-color:#393E46;
+    --light-color:#76EAD7;
+    --text-color:#EEEEEE;
+
+    /* OR */
+    /* --main-color:#F7FF56;
+    --dark-color:#032D3C;
+    --light-color:#94FC13;
+    --text-color:#4BE3AC; */
+}
+
+body{
+    background-color: var(--dark-color);
+}
+
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+    padding: 0 20px;
+	background-color: var(--dark-color);
+	z-index: 100;
+	box-shadow: -20px 0px 80px #1119;
+}
+
+/* Nav  */
+.nav{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 16px 0;
+}
+
+/*  Logo  */
+.logo{
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: var(--main-color);
+	text-transform: uppercase;
+	margin: 0 auto 0 0;
+}
+.logo .span1{
+	color: var(--text-color);
+}
+.logo .span2{
+	color: var(--light-color);
+}
+
+/* Nav Icons */
+.nav-icons{
+	display: flex;
+	align-items: center;
+	column-gap: 1rem;
+}
+.nav-icons .btn{
+	font-size: 20px;
+	font-weight: 500;
+	height: 44px;
+	padding: 0 20px;
+	display: grid;
+	place-items: center;
+	color: var(--text-color);
+	border-radius: 10%;
+	cursor: pointer;
+	transition:  0.3s;
+}
+.nav-icons .btn:hover{
+	color: var(--dark-color);
+	background-color: var(--light-color);
+}
+
+
+/* Gallery */
+.container-cards{
+	display: flex;
+	width: 90%;
+	margin: 50px auto;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.card{
+	position:relative;
+	height: 300px;
+	max-width: 300px;
+	margin: 30px;
+	overflow: hidden;
+	display: block;
+	flex-basis: 100%;
+	box-shadow: 5px 5px 20px #1116;
+	border-radius: 20%;
+}
+
+
+.card-contain img{
+	
+}
+.card_text{
+	height: 200px;
+	width: 300px;
+	padding: 6px;
+	background-color: #1119;
+	box-sizing: border-box;
+	position: absolute;
+	top: 300px;
+	transition: 0.3s;
+}
+.card_text span{
+	color: var(--light-color);
+}
+
+.card:hover{
+	cursor: pointer;
+}
+
+.card:hover .card_text{
+	top: 190px;
+}
+
+h3{
+    color:var(--main-color);
+}
+
+.marginTop{
+	margin: 50px auto;
+}
+
+/* FORM */
+.center{
+	padding: 20px 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	box-shadow: 5px 5px 20px #1116;
+	background-color: var(--dark-color);
+	border-radius: 10px;
+}
+
+.center h1{
+	text-align: center;
+	padding: 0 0 20px 0;
+	border-radius: 1px solid silver;
+	border-bottom: 2px solid #adadad;
+	color: var(--main-color);
+}
+.center h1 span{
+	color: var(--light-color);
+}
+
+.center form{
+	padding: 0 40px;
+	box-sizing: border-box;
+}
+
+.center form .txt_field{
+	position: relative;
+	border-bottom: 2px solid #adadad;
+	margin: 30px 0;
+}
+
+.center form .txt_field input{
+	width: 100%;
+	padding: 0 5px;
+	height: 40px;
+	font-size: 16px;
+	border: none;
+	background: none;
+	outline: none;
+}
+
+.center form .txt_field label{
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	color: #adadad;
+	transform: translateY(-50%);
+	font-size: 16px;
+	pointer-events: none;
+	transition: 0.5s;
+}
+
+.center form .txt_field span::before {
+	content: "";
+	position: absolute;
+	top: 40px;
+	left: 0;
+	width: 0%;
+	height: 2px;
+	background-color: var(--light-color);
+	transition: .3s;
+}
+
+.center form .txt_field input:focus ~ label,
+.center form .txt_field input:valid ~ label{
+	top: -5px;
+	color: var(--main-color);
+}
+
+.center form .txt_field input:focus ~ span::before,
+.center form .txt_field input:valid ~ span::before{
+	width: 100%;
+}
+
+.btn-submit{
+	width: 100%;
+	height: 50px;
+	border: 1px solid;
+	background-color: var(--light-color);
+	border-radius: 25px;
+	font-size: 18px;
+	color: var(--dark-color);
+	font-weight: 700;
+	cursor: pointer;
+	outline: none;
+	transition: .1s;
+}
+.btn-submit:hover{
+	color: var(--light-color);
+	background-color: transparent;
+	border-color: var(--light-color);
+}
+
+@media only screen and (min-width: 640px){
+	.card{
+		display: block;
+		flex-basis: 50%;
+	}
+}
+
+@media only screen and (min-width: 960px){
+	.card{
+		display: block;
+		flex-basis: 33.333%;
+	}
+}
